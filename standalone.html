@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Sic Bo Casino - Tài Xỉu Đẳng Cấp Quốc Tế</title>
+
+    <style>
+        /* Import Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+        /* CSS Variables */
+        :root {
+            --color-black: #0A0A0F;
+            --color-black-light: #151520;
+            --color-card: #1A1A28;
+            --color-gold: #F5D46B;
+            --color-gold-bright: #FFE485;
+            --color-ruby: #FF2E45;
+            --color-emerald: #10F0C8;
+            --color-white: #FFFFFF;
+            --color-gray: #8E8E93;
+        }
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--color-black);
+            color: var(--color-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(245, 212, 107, 0.1);
+            z-index: 100;
+        }
+
+        .navbar-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-gold);
+            text-decoration: none;
+        }
+
+        .navbar-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .navbar-link {
+            color: #F5F5F7;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.25s;
+            position: relative;
+        }
+
+        .navbar-link:hover,
+        .navbar-link.active {
+            color: var(--color-gold);
+        }
+
+        .navbar-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #FFE485, #F5D46B, #D4B556);
+        }
+
+        .navbar-balance {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--color-card);
+            border-radius: 1rem;
+            border: 1px solid rgba(245, 212, 107, 0.2);
+        }
+
+        .navbar-balance-amount {
+            font-weight: 700;
+            background: linear-gradient(135deg, #FFE485, #F5D46B, #D4B556);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 5rem 0;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(245, 212, 107, 0.1), transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .dice-3d {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, #FFE485, #F5D46B, #D4B556);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            box-shadow: 0 8px 32px rgba(245, 212, 107, 0.5);
+            animation: float 3s ease-in-out infinite, rotate 10s linear infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotateY(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotateY(180deg);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #FFE485, #F5D46B, #D4B556);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 2.25rem;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: #F5F5F7;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 1rem;
+            cursor: pointer;
+            transition: all 0.25s;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FFE485, #F5D46B, #D4B556);
+            color: var(--color-black);
+            box-shadow: 0 4px 24px rgba(245, 212, 107, 0.3);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 8px 32px rgba(245, 212, 107, 0.5), 0 0 20px rgba(245, 212, 107, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--color-white);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--color-gold);
+            color: var(--color-gold);
+            box-shadow: 0 0 20px rgba(245, 212, 107, 0.6);
+        }
+
+        .btn-xl {
+            padding: 1.5rem 4rem;
+            font-size: 1.5rem;
+            border-radius: 1.5rem;
+        }
+
+        /* Features Section */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #FFE485, #F5D46B, #D4B556);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--color-gray);
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card-casino {
+            background: var(--color-card);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            border: 2px solid rgba(245, 212, 107, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            transition: all 0.25s;
+            text-align: center;
+        }
+
+        .card-casino:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6), 0 0 20px rgba(245, 212, 107, 0.6);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 12px currentColor);
+        }
+
+        .card-casino-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-casino-body {
+            color: #F5F5F7;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--color-black-light);
+            border-top: 1px solid rgba(245, 212, 107, 0.1);
+            padding: 3rem 0 1.5rem;
+            margin-top: 5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--color-gold);
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-link {
+            color: var(--color-gray);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .footer-link:hover {
+            color: var(--color-gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(245, 212, 107, 0.1);
+            color: var(--color-gray);
+            font-size: 0.875rem;
+        }
+
+        .footer-security {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(245, 212, 107, 0.1);
+            border-radius: 0.75rem;
+            font-size: 0.75rem;
+            color: var(--color-gold);
+        }
+
+        /* Responsive */
+        @media (max-width: 767px) {
+            .navbar-menu {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+
+            .btn-xl {
+                padding: 1rem 2rem;
+                font-size: 1.125rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+        }
+
+        /* Page transition */
+        .page {
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="navbar-logo">
+                <span style="font-size: 2rem;">🎲</span>
+                <span>SIC BO VIP</span>
+            </a>
+
+            <ul class="navbar-menu">
+                <li><a href="#" class="navbar-link active">Trang Chủ</a></li>
+                <li><a href="#" class="navbar-link">Sảnh Game</a></li>
+                <li><a href="#" class="navbar-link">Khuyến Mãi</a></li>
+                <li><a href="#" class="navbar-link">VIP</a></li>
+                <li><a href="#" class="navbar-link">Ví</a></li>
+                <li><a href="#" class="navbar-link">Hồ Sơ</a></li>
+            </ul>
+
+            <div class="navbar-balance">
+                <span>💰</span>
+                <span class="navbar-balance-amount">1,250,000 ₫</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section page">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="dice-3d">🎲</div>
+
+                <h1 class="hero-title">
+                    <span class="text-gradient-gold">TÀI XỈU</span><br>
+                    <span class="hero-subtitle">Đẳng Cấp Quốc Tế</span>
+                </h1>
+
+                <p class="hero-description">
+                    Trải nghiệm casino premium với tốc độ real-time < 0.2s<br>
+                        Minh bạch RNG • Livestream Dealer • Hoàn trả cao
+                </p>
+
+                <div class="hero-cta">
+                    <button class="btn btn-primary btn-xl">
+                        🎲 CHƠI NGAY
+                    </button>
+                    <button class="btn btn-ghost btn-xl">
+                        🎁 KHUYẾN MÃI
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ưu Điểm Vượt Trội</h2>
+                <p class="section-subtitle">Tại sao chọn chúng tôi?</p>
+            </div>
+
+            <div class="grid-4">
+                <div class="card-casino">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="card-casino-title">Tốc Độ Siêu Nhanh</h3>
+                    <p class="card-casino-body">
+                        Real-time < 0.2s, không lag, không giật. Trải nghiệm mượt mà như tơ. </p>
+                </div>
+
+                <div class="card-casino">
+                    <div class="feature-icon">🎲</div>
+                    <h3 class="card-casino-title">Minh Bạch RNG</h3>
+                    <p class="card-casino-body">
+                        Hệ thống random number generator được kiểm định quốc tế.
+                    </p>
+                </div>
+
+                <div class="card-casino">
+                    <div class="feature-icon">📹</div>
+                    <h3 class="card-casino-title">Livestream HD</h3>
+                    <p class="card-casino-body">
+                        Dealer chuyên nghiệp, stream trực tiếp chất lượng cao.
+                    </p>
+                </div>
+
+                <div class="card-casino">
+                    <div class="feature-icon">💰</div>
+                    <h3 class="card-casino-title">Hoàn Trả Cao</h3>
+                    <p class="card-casino-body">
+                        Tỷ lệ hoàn trả lên đến 98.5%, cao nhất thị trường.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Về Chúng Tôi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Giới Thiệu</a></li>
+                        <li><a href="#" class="footer-link">Điều Khoản</a></li>
+                        <li><a href="#" class="footer-link">Chính Sách Bảo Mật</a></li>
+                        <li><a href="#" class="footer-link">Trò Chơi Có Trách Nhiệm</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Hỗ Trợ</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Trung Tâm Trợ Giúp</a></li>
+                        <li><a href="#" class="footer-link">Hướng Dẫn Chơi</a></li>
+                        <li><a href="#" class="footer-link">Câu Hỏi Thường Gặp</a></li>
+                        <li><a href="#" class="footer-link">Liên Hệ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Giao Dịch</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Nạp Tiền</a></li>
+                        <li><a href="#" class="footer-link">Rút Tiền</a></li>
+                        <li><a href="#" class="footer-link">Lịch Sử Giao Dịch</a></li>
+                        <li><a href="#" class="footer-link">Phương Thức Thanh Toán</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Kết Nối</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Facebook</a></li>
+                        <li><a href="#" class="footer-link">Telegram</a></li>
+                        <li><a href="#" class="footer-link">Zalo</a></li>
+                        <li><a href="#" class="footer-link">Live Chat 24/7</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-security">
+                    <div class="footer-badge">
+                        <span>🔒</span>
+                        <span>SSL Encrypted</span>
+                    </div>
+                    <div class="footer-badge">
+                        <span>🛡️</span>
+                        <span>AES-256</span>
+                    </div>
+                    <div class="footer-badge">
+                        <span>✓</span>
+                        <span>Licensed & Regulated</span>
+                    </div>
+                </div>
+                <p style="margin-top: 1rem;">
+                    © 2024 Premium Sic Bo Casino. All rights reserved. | 18+ Chơi có trách nhiệm
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
